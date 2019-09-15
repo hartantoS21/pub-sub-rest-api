@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GOGOGOGO</title>
+    <script>
+        var ws = new WebSocket('ws://127.0.0.1:1234/ws')
+        ws.onopen = () =>{
+            console.log("connected")
+        }
+        ws.onmessage = (msg) =>{
+            console.log("server message",msg.data)
+        }
+        ws.onclose = () =>{
+            console.log("disconnected")
+        }
+        window.ws = ws
+    </script>
+</head>
+
+</html>
